@@ -14,6 +14,11 @@ The program is my first attempt to create a simple interface for python.
 * pillow (https://pillow.readthedocs.io/en/stable/installation.html)
   * pip install --upgrade pip
   * pip install --upgrade Pillow
+  
+ ## Compailing windows exe (https://www.pyinstaller.org/)
+ I used pyinstaller to build the windows program.
+ 
+ Command for compiling: pyinstaller -wF tci-simple-image-viewer.py
 
 
 ## Configure Folders
