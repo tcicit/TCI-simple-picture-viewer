@@ -14,6 +14,6 @@ f no Output and Move Path is specified, the folders in the working directory are
 
 ## View, Copy or Move Images
 
-![grafik](https://user-images.githubusercontent.com/12540138/93324825-b05bda00-f816-11ea-904b-9008da722797.png)
+![grafik](https://user-images.githubusercontent.com/12540138/93336313-e48bc680-f827-11ea-9b45-7c09a55a9f81.png)
 
 The Delet button deletes the file irreversibly. 
