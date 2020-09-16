@@ -6,6 +6,16 @@ The program is written in Python and pysimplegui.
 
 The program is my first attempt to create a simple interface for python. 
 
+## Prerequisites
+
+* Python 3.x
+* PySimpleGUI (https://pypi.org/project/PySimpleGUI/)
+  * pip install pysimplegui
+* pillow (https://pillow.readthedocs.io/en/stable/installation.html)
+  * pip install --upgrade pip
+  * pip install --upgrade Pillow
+
+
 ## Configure Folders
 
 ![grafik](https://user-images.githubusercontent.com/12540138/93324254-ec426f80-f815-11ea-9935-3b12921e626b.png)
