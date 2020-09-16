@@ -54,7 +54,7 @@ layout_popup = [[sg.Text('Chose input folder and output folders')],
                 [sg.Text("Move Path:", size=(15, 1)), sg.InputText(default_text=os.getcwd()+ "/moved_files",size=(80, 1)), sg.FolderBrowse()],
                 [sg.Submit(size=(15, 2)), sg.Cancel(size=(15, 2))]]
 
-window = sg.Window('Folders', layout_popup, icon="tci-image-viewer.ico" )
+window = sg.Window('Folders', layout_popup, icon="tci-simple-image-viewer.ico" )
 
 event, values_popup = window.read()
 window.close()
@@ -80,7 +80,7 @@ fnames = [f for f in flist0 if os.path.isfile(
 
 num_files = len(fnames)                # number of iamges found
 if num_files == 0:
-    sg.popup('No files in input folder')
+    sg.popup('      No files in input folder    ', icon="tci-simple-image-viewer.ico")
     raise SystemExit()
 
 del flist0                             # no longer needed
@@ -173,7 +173,7 @@ window = sg.Window('Image Browser',
                     use_default_focus=False,
                     resizable=True,
                     text_justification="center",
-                    icon="tci-image-viewer.ico"
+                    icon="tci-simple-image-viewer.ico"
                     )
 
 #size=(825,725)
@@ -245,7 +245,7 @@ while True:
         layout_popup = [[sg.Text('Do you want to delete the file?')],
                         [sg.Submit("OK", size=(15, 2)), sg.Cancel("Cancel", size=(15, 2))]]
 
-        windowOkCancel = sg.Window('OK / Cancel', layout_popup, icon="tci-image-viewer.ico" )
+        windowOkCancel = sg.Window('OK / Cancel', layout_popup, icon="tci-simple-image-viewer.ico" )
 
         while True:
             # read the form
@@ -260,7 +260,7 @@ while True:
                     #os.remove(os.path.join(input_folder, fnames[i]))
                 except IOError as e:
                     print("Unable to copy file. %s" % e)
-                    sg.popup("Can't delete File.", icon="tci-image-viewer.ico")
+                    sg.popup("Can't delete File.", icon="tci-simple-image-viewer.ico")
             windowOkCancel.close() 
      
     else:
