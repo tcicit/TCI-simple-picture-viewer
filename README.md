@@ -19,6 +19,9 @@ The program is my first attempt to create a simple interface for python.
  I used pyinstaller to build the windows program.
  
  Command for compiling: pyinstaller -wF tci-simple-image-viewer.py
+ 
+ ## Download Windows EXE-File
+ https://github.com/tcicit/TCI-simple-picture-viewer/releases
 
 
 ## Configure Folders
