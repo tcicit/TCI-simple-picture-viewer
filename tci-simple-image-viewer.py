@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Simple Image Browser based on PySimpleGUI an pillow
+Simple Image Browser based on PySimpleGUI and pillow
 ---------------------------------------------------
 Autor: Thomas Cigolla
 Web: cigolla.ch
