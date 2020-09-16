@@ -28,8 +28,6 @@ Geplante Erweiterungen
 * Vorschau mit Tumpnails
 * Wechsel des Folders innerhalb des Programms
 * Spalsh-Screen
-* Neues Logo
-* gescheiten Namen finden
 * etc.
 
 Limitation:
