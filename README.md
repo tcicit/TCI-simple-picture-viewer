@@ -6,4 +6,4 @@ The program is written in Python and pysimplegui.
 
 The program is my first attempt to create a simple interface for python. 
 
-![](https://github.com/tcicit/TCI-simple-picture-viewer/issues/1)
+![](https://user-images.githubusercontent.com/12540138/93324254-ec426f80-f815-11ea-9935-3b12921e626b.png)
