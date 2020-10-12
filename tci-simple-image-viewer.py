@@ -36,6 +36,7 @@ Limitation:
 PIL.Image.DecompressionBombError: Image size (220473013 pixels) exceeds limit of 178956970 pixels, could be decompression bomb DOS attack.
 
 """
+
 import os
 import io
 import PySimpleGUI as sg
@@ -43,11 +44,12 @@ import shutil
 from sys import exit
 from PIL import Image, ImageTk
 
+sg.theme('dark grey 9')
 # ------------------------------------------------------------------------------
 # Get folders 
 # ------------------------------------------------------------------------------
 layout_popup = [[sg.Text('Chose input folder and output folders')],
-                [sg.Text("Input Path:", size=(15, 1)), sg.InputText(default_text=os.getcwd(),size=(80, 1)), sg.FolderBrowse()],
+                [sg.Text("Input Path:", size=(15, 1)), sg.InputText(default_text=os.getcwd(),size=(80, 1)), sg.FolderBrowse(), sg.Checkbox('Include subfolders')],
                 [sg.Text("Output Path:", size=(15, 1)), sg.InputText(default_text=os.getcwd()+ "/good_files",size=(80, 1)), sg.FolderBrowse()],
                 [sg.Text("Move Path:", size=(15, 1)), sg.InputText(default_text=os.getcwd()+ "/moved_files",size=(80, 1)), sg.FolderBrowse()],
                 [sg.Submit(size=(15, 2)), sg.Cancel(size=(15, 2))]]
@@ -58,8 +60,10 @@ event, values_popup = window.read()
 window.close()
 
 input_folder = values_popup[0]     # the first input element is values[0]
-output_folder = values_popup[1]     
-move_folder = values_popup[2]
+inc_sub_folder = values_popup[1]
+output_folder = values_popup[2]     
+move_folder = values_popup[3]
+
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
@@ -69,19 +73,30 @@ if not os.path.exists(move_folder):
 # PIL supported image types
 img_types = (".png", ".jpg", "jpeg", ".tiff", ".bmp")
 
-# get list of files in input folder
-flist0 = os.listdir(input_folder)
+# get list of files in input folder(s)
+fnames = []
+if inc_sub_folder == False:
+    flist0 = os.listdir(input_folder)
+    for file in flist0:
+        file.lower()
+        fpath = os.path.join(input_folder, file)
+        if os.path.isfile(fpath):
+            if (file.endswith(img_types)):
+                fnames.append(os.path.join(fpath))   
+else:
+    for path, directories, files in os.walk(input_folder):
+        for file in files:
+            file.lower()
+            if (file.endswith(img_types)):
+                fnames.append(os.path.join(path, file))
 
-# create sub list of image files (no sub input folders, no wrong file types)
-fnames = [f for f in flist0 if os.path.isfile(
-    os.path.join(input_folder, f)) and f.lower().endswith(img_types)]
 
 num_files = len(fnames)                # number of iamges found
+print (num_files)
+print (fnames)
 if num_files == 0:
-    sg.popup('      No files in input folder    ', icon="tci-simple-image-viewer.ico")
+    sg.popup('     No files in input folder       ', icon="tci-simple-image-viewer.ico")
     raise SystemExit()
-
-del flist0                             # no longer needed
 
 # ------------------------------------------------------------------------------
 def next_file(i, num_files, input_folder, fnames):
