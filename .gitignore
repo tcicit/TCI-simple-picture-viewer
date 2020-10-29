@@ -1,0 +1,8 @@
+
+compile.bat
+*.*old
+*.spec
+/build
+/dist
+/good_files
+/moved_files
