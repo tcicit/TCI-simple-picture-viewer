@@ -1,0 +1,10 @@
+
+compile.bat
+.gitattributes 
+*.*old
+*.spec
+/build
+/dist
+/good_files
+/moved_files
+/__pycache__
