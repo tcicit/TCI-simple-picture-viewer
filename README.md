@@ -26,9 +26,9 @@ The program is my first attempt to create a simple interface for python.
 
 ## Configure Folders
 
-![grafik](![grafik](https://user-images.githubusercontent.com/12540138/97572911-4758ac00-19e9-11eb-8e3b-a9921e4da023.png)
+![grafik](https://user-images.githubusercontent.com/12540138/97572911-4758ac00-19e9-11eb-8e3b-a9921e4da023.png)
 
-f no Output and Move Path is specified, the folders in the working directory are created automatically.
+ Output and Move Path is specified, the folders in the working directory are created automatically.
 
 ## View, Copy or Move Images
 
