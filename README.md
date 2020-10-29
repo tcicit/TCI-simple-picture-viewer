@@ -26,7 +26,7 @@ The program is my first attempt to create a simple interface for python.
 
 ## Configure Folders
 
-![grafik](https://github.com/tcicit/TCI-simple-picture-viewer/issues/4#issue-732261345)
+![grafik](https://user-images.githubusercontent.com/12540138/97572377-6acf2700-19e8-11eb-979e-15688e1c9979.png)
 
 f no Output and Move Path is specified, the folders in the working directory are created automatically.
 
